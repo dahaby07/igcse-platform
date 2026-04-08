@@ -1,0 +1,90 @@
+.admin-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-page__header h2 {
+  margin: 0;
+}
+
+.admin-page__add-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(120deg, #8b5cf6, #06b6d4);
+}
+
+.admin-page__error {
+  margin: 0;
+  color: #fca5a5;
+}
+
+.admin-page__success {
+  margin: 0;
+  color: #86efac;
+}
+
+.admin-page__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+
+.admin-page__stats article {
+  border-radius: 16px;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.admin-page__stats h3 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.admin-page__stats p {
+  margin: 0.35rem 0 0;
+  color: #d1d5db;
+}
+
+.admin-page__topic-filter label {
+  display: grid;
+  gap: 0.3rem;
+  color: #cbd5e1;
+}
+
+.admin-page__topic-filter select {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #f8fafc;
+  padding: 0.55rem 0.65rem;
+}
+
+.admin-page__list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.admin-page__question-item {
+  display: grid;
+  gap: 0.3rem;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.admin-page__question-item span {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}

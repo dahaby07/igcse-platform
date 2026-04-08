@@ -2,58 +2,100 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+
 const app = express();
+const PORT = 3001;
+const DATA_PATH = path.join(__dirname, 'data.json');
 
 app.use(cors());
 app.use(express.json());
 
-const dataFile = path.join(__dirname, 'data.json');
-
-if (!fs.existsSync(dataFile)) {
-    const initialData = {
-        topics: [
-            {id: 1, name: 'Atomic Structure'},
-            {id: 2, name: 'Bonding'},
-            {id: 3, name: 'Stoichiometry'},
-            {id: 4, name: 'Energetics'},
-            {id: 5, name: 'Kinetics'},
-            {id: 6, name: 'Equilibrium'},
-            {id: 7, name: 'Acids and Bases'},
-            {id: 8, name: 'Redox Reactions'},
-            {id: 9, name: 'Electrochemistry'},
-            {id: 10, name: 'Organic Chemistry'},
-            {id: 11, name: 'Polymers'},
-            {id: 12, name: 'Groups in the Periodic Table'},
-            {id: 13, name: 'Rates of Reaction'},
-            {id: 14, name: 'Equilibrium Constant'}
-        ],
-        questions: []
-    };
-    fs.writeFileSync(dataFile, JSON.stringify(initialData, null, 2));
+function readData() {
+  return JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
 }
 
-app.get('/api/topics', (req, res) => {
-    const data = JSON.parse(fs.readFileSync(dataFile));
-    res.json(data.topics);
+function writeData(data) {
+  fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2));
+}
+
+function parseInteger(value) {
+  const parsed = Number.parseInt(value, 10);
+  return Number.isNaN(parsed) ? null : parsed;
+}
+
+app.get('/api/topics', (_req, res) => {
+  const data = readData();
+  res.json(data.topics);
 });
 
 app.get('/api/questions/:topicId', (req, res) => {
-    const data = JSON.parse(fs.readFileSync(dataFile));
-    const questions = data.questions.filter(q => q.topicId == req.params.topicId);
-    res.json(questions);
+  const topicId = parseInteger(req.params.topicId);
+
+  if (topicId === null) {
+    return res.status(400).json({ error: 'Invalid topicId.' });
+  }
+
+  const data = readData();
+  const questions = data.questions.filter((question) => question.topicId === topicId);
+  return res.json(questions);
 });
 
-app.get('/api/stats', (req, res) => {
-    const data = JSON.parse(fs.readFileSync(dataFile));
-    res.json({ totalTopics: data.topics.length, totalQuestions: data.questions.length });
+app.get('/api/stats', (_req, res) => {
+  const data = readData();
+  res.json({
+    totalTopics: data.topics.length,
+    totalQuestions: data.questions.length
+  });
 });
 
 app.post('/api/questions', (req, res) => {
-    const data = JSON.parse(fs.readFileSync(dataFile));
-    const newQuestion = { id: Math.max(...data.questions.map(q => q.id), 0) + 1, ...req.body };
-    data.questions.push(newQuestion);
-    fs.writeFileSync(dataFile, JSON.stringify(data, null, 2));
-    res.json(newQuestion);
+  const { topicId, year, difficulty, text, marks, markScheme } = req.body;
+
+  const normalizedTopicId = parseInteger(topicId);
+  const normalizedYear = parseInteger(year);
+  const normalizedMarks = parseInteger(marks);
+
+  if (
+    normalizedTopicId === null ||
+    normalizedYear === null ||
+    normalizedMarks === null ||
+    typeof difficulty !== 'string' ||
+    typeof text !== 'string' ||
+    typeof markScheme !== 'string' ||
+    !difficulty.trim() ||
+    !text.trim() ||
+    !markScheme.trim()
+  ) {
+    return res.status(400).json({
+      error: 'Invalid payload. Required fields: topicId, year, difficulty, text, marks, markScheme.'
+    });
+  }
+
+  const data = readData();
+  const topicExists = data.topics.some((topic) => topic.id === normalizedTopicId);
+
+  if (!topicExists) {
+    return res.status(404).json({ error: 'Topic not found.' });
+  }
+
+  const maxId = data.questions.reduce((currentMax, question) => Math.max(currentMax, question.id), 0);
+
+  const newQuestion = {
+    id: maxId + 1,
+    topicId: normalizedTopicId,
+    year: normalizedYear,
+    difficulty: difficulty.trim(),
+    text: text.trim(),
+    marks: normalizedMarks,
+    markScheme: markScheme.trim()
+  };
+
+  data.questions.push(newQuestion);
+  writeData(data);
+
+  return res.status(201).json(newQuestion);
 });
 
-app.listen(3001, () => console.log('Backend running on http://localhost:3001'));
+app.listen(PORT, () => {
+  console.log(`Backend running on http://localhost:${PORT}`);
+});

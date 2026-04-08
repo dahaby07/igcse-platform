@@ -1,0 +1,35 @@
+.topics-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.topics-page h2 {
+  margin: 0;
+}
+
+.topics-page__error {
+  margin: 0;
+  color: #fca5a5;
+}
+
+.topics-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.topics-page__card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.topics-page__card span {
+  color: #93c5fd;
+  font-size: 0.85rem;
+}
+
+.topics-page__card h3 {
+  margin: 0.5rem 0 0;
+}

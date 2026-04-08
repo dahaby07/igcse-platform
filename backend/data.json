@@ -1,0 +1,92 @@
+{
+  "topics": [
+    { "id": 1, "name": "States of Matter" },
+    { "id": 2, "name": "Atomic Structure" },
+    { "id": 3, "name": "Chemical Bonding" },
+    { "id": 4, "name": "Stoichiometry" },
+    { "id": 5, "name": "Electrolysis" },
+    { "id": 6, "name": "Acids, Bases and Salts" },
+    { "id": 7, "name": "Energetics" },
+    { "id": 8, "name": "Rates of Reaction" },
+    { "id": 9, "name": "Reversible Reactions and Equilibrium" },
+    { "id": 10, "name": "Redox Reactions" },
+    { "id": 11, "name": "Organic Chemistry" },
+    { "id": 12, "name": "Chemical Analysis" },
+    { "id": 13, "name": "The Periodic Table" },
+    { "id": 14, "name": "Metals" }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topicId": 2,
+      "year": 2022,
+      "difficulty": "Easy",
+      "text": "State the relative charge and relative mass of a proton.",
+      "marks": 2,
+      "markScheme": "Charge: +1 (1 mark). Relative mass: 1 (1 mark)."
+    },
+    {
+      "id": 2,
+      "topicId": 4,
+      "year": 2021,
+      "difficulty": "Medium",
+      "text": "Calculate the empirical formula of a compound containing 40% carbon, 6.7% hydrogen and 53.3% oxygen by mass.",
+      "marks": 4,
+      "markScheme": "Assume 100 g: C=40/12=3.33, H=6.7/1=6.7, O=53.3/16=3.33. Ratio 1:2:1. Empirical formula CH2O."
+    },
+    {
+      "id": 3,
+      "topicId": 5,
+      "year": 2020,
+      "difficulty": "Hard",
+      "text": "Explain why cryolite is added during the electrolysis of aluminium oxide.",
+      "marks": 3,
+      "markScheme": "Lowers melting point of electrolyte, reduces energy needed, increases conductivity / lowers cost."
+    },
+    {
+      "id": 4,
+      "topicId": 6,
+      "year": 2023,
+      "difficulty": "Easy",
+      "text": "Describe a test to identify hydrogen gas.",
+      "marks": 2,
+      "markScheme": "Bring a lit splint to the gas; hydrogen burns with a squeaky pop."
+    },
+    {
+      "id": 5,
+      "topicId": 8,
+      "year": 2019,
+      "difficulty": "Medium",
+      "text": "State two factors that increase the rate of reaction between marble chips and hydrochloric acid.",
+      "marks": 2,
+      "markScheme": "Any two: increase temperature, increase acid concentration, use smaller chips (greater surface area), add catalyst."
+    },
+    {
+      "id": 6,
+      "topicId": 11,
+      "year": 2022,
+      "difficulty": "Hard",
+      "text": "Name the functional group in ethanol and give one reaction characteristic of this group.",
+      "marks": 3,
+      "markScheme": "Functional group is hydroxyl (-OH). Example: oxidation to ethanoic acid / combustion to CO2 and H2O / reaction with sodium to produce hydrogen."
+    },
+    {
+      "id": 7,
+      "topicId": 12,
+      "year": 2021,
+      "difficulty": "Medium",
+      "text": "Describe the test for chloride ions in aqueous solution.",
+      "marks": 3,
+      "markScheme": "Acidify with dilute nitric acid, add aqueous silver nitrate, white precipitate (silver chloride) forms."
+    },
+    {
+      "id": 8,
+      "topicId": 14,
+      "year": 2020,
+      "difficulty": "Easy",
+      "text": "Why are alloys generally harder than pure metals?",
+      "marks": 2,
+      "markScheme": "Different sized atoms in alloys distort layers and prevent them sliding easily, making alloy harder."
+    }
+  ]
+}
