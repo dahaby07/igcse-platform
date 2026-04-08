@@ -129,6 +129,174 @@
       "text": "Why are alloys generally harder than pure metals?",
       "marks": 2,
       "markScheme": "Different sized atoms in alloys distort layers and prevent them sliding easily, making alloy harder."
+    },
+    {
+      "id": 9,
+      "topicId": 2,
+      "year": 2024,
+      "difficulty": "Easy",
+      "text": "What is the number of protons in an atom of magnesium (atomic number 12)?",
+      "marks": 1,
+      "markScheme": "Correct answer: C (12 protons).",
+      "options": [
+        {
+          "key": "A",
+          "text": "10"
+        },
+        {
+          "key": "B",
+          "text": "11"
+        },
+        {
+          "key": "C",
+          "text": "12"
+        },
+        {
+          "key": "D",
+          "text": "24"
+        }
+      ],
+      "correctOption": "C"
+    },
+    {
+      "id": 10,
+      "topicId": 3,
+      "year": 2023,
+      "difficulty": "Medium",
+      "text": "Which type of bonding is present in sodium chloride?",
+      "marks": 1,
+      "markScheme": "Correct answer: B (ionic bonding).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Covalent"
+        },
+        {
+          "key": "B",
+          "text": "Ionic"
+        },
+        {
+          "key": "C",
+          "text": "Metallic"
+        },
+        {
+          "key": "D",
+          "text": "Hydrogen"
+        }
+      ],
+      "correctOption": "B"
+    },
+    {
+      "id": 11,
+      "topicId": 6,
+      "year": 2022,
+      "difficulty": "Easy",
+      "text": "Which gas is produced when dilute hydrochloric acid reacts with zinc?",
+      "marks": 1,
+      "markScheme": "Correct answer: A (hydrogen).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hydrogen"
+        },
+        {
+          "key": "B",
+          "text": "Oxygen"
+        },
+        {
+          "key": "C",
+          "text": "Chlorine"
+        },
+        {
+          "key": "D",
+          "text": "Carbon dioxide"
+        }
+      ],
+      "correctOption": "A"
+    },
+    {
+      "id": 12,
+      "topicId": 8,
+      "year": 2021,
+      "difficulty": "Medium",
+      "text": "Which change increases the rate of reaction most by increasing collision frequency?",
+      "marks": 1,
+      "markScheme": "Correct answer: D (increase concentration).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Decrease temperature"
+        },
+        {
+          "key": "B",
+          "text": "Use larger pieces"
+        },
+        {
+          "key": "C",
+          "text": "Remove catalyst"
+        },
+        {
+          "key": "D",
+          "text": "Increase concentration"
+        }
+      ],
+      "correctOption": "D"
+    },
+    {
+      "id": 13,
+      "topicId": 12,
+      "year": 2020,
+      "difficulty": "Hard",
+      "text": "What is the observation when aqueous silver nitrate is added to a chloride solution (after acidifying)?",
+      "marks": 1,
+      "markScheme": "Correct answer: C (white precipitate).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Blue precipitate"
+        },
+        {
+          "key": "B",
+          "text": "Green precipitate"
+        },
+        {
+          "key": "C",
+          "text": "White precipitate"
+        },
+        {
+          "key": "D",
+          "text": "Brown precipitate"
+        }
+      ],
+      "correctOption": "C"
+    },
+    {
+      "id": 14,
+      "topicId": 11,
+      "year": 2024,
+      "difficulty": "Medium",
+      "text": "Which substance is an unsaturated hydrocarbon?",
+      "marks": 1,
+      "markScheme": "Correct answer: B (ethene).",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ethane"
+        },
+        {
+          "key": "B",
+          "text": "Ethene"
+        },
+        {
+          "key": "C",
+          "text": "Methane"
+        },
+        {
+          "key": "D",
+          "text": "Propane"
+        }
+      ],
+      "correctOption": "B"
     }
   ]
 }
